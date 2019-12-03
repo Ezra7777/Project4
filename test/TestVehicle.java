@@ -7,6 +7,8 @@ import org.junit.Test;
 
 public class TestVehicle {
 
+
+
     @Test
     public void GIVEN_CAR_WHEN_PASSENGER_COUNT_8_AND_SPEED_100_THEN_FEE_750() {
         Car car = new Car("Toyota", "Red", 8, 100);

@@ -7,6 +7,10 @@ public class Ticket {
      * create private static attribute with name fine as int
      */
 
+       private static int fine;
+
+
+
 
 
     /**
@@ -27,4 +31,32 @@ public class Ticket {
      */
 
 
+
+
+
+           public static int getFine(int currentSpeed) {
+
+
+               if (currentSpeed >= 80 && currentSpeed <= 90) {
+
+                   fine = 80;
+               } else if (currentSpeed >= 90 && currentSpeed <= 100) {
+
+                   fine = 150;
+               } else if (currentSpeed >= 100 && currentSpeed <= 110) {
+
+                   fine = 280;
+               } else if (currentSpeed > 110) {
+
+                   fine = 500;
+               } else
+                   fine = 0;
+
+               return fine;
+
+           }
 }
+
+
+
+

@@ -7,6 +7,8 @@ public class Car extends Vehicle {
      * Task 10
      * create two private attributes: int passengerCount, int currentSpeed
      */
+       private int passengerCount;
+       private int currentSpeed;
 
 
 
@@ -17,6 +19,14 @@ public class Car extends Vehicle {
      */
 
 
+    public int getPassengerCount() {
+        return passengerCount;
+    }
+
+    public int getCurrentSpeed() {
+        return currentSpeed;
+    }
+
 
 
 
@@ -26,7 +36,11 @@ public class Car extends Vehicle {
      * order of parameters are model, color, passengerCount, currentSpeed
      */
 
-
+    public Car (String model, String color, int passengerCount, int currentSpeed) {
+        super(model, color);
+        this.passengerCount = passengerCount;
+        this.currentSpeed = currentSpeed;
+    }
 
 
     /**
@@ -44,7 +58,17 @@ public class Car extends Vehicle {
      * return extraFine
      */
 
-
-
-
+    public int additionalFineForCrowd() {
+        int extraFine = Ticket.getFine(currentSpeed);
+        if (passengerCount == 6 || passengerCount == 7) {
+            extraFine += 300;
+        }
+        if (passengerCount >= 8 && passengerCount <= 10) {
+            extraFine += 600;
+        }
+        if (passengerCount > 10) {
+            extraFine += 1_000;
+        }
+        return extraFine;
+    }
 }
